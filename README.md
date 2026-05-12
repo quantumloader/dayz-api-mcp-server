@@ -1,4 +1,4 @@
-# enforce-mcp-dayz
+# DayZ API MCP Server [Made by Opus 4.6 FULL :)]
 
 ![DayZ API MCP Server](generated.png)
 
@@ -171,7 +171,7 @@ node dist/indexer/index-cli.js verify --min-classes 1000
 
 ## Parser
 
-The Enforce Script parser is based on the [dfenscript](https://github.com/ApertureScienceInnovators/dfenscript) lexer. Key capabilities:
+The Enforce Script parser is based on the [dfenscript](https://github.com/DaemonForge/dfenscript) lexer. Key capabilities:
 
 - Full `#ifdef` / `#ifndef` / `#else` / `#endif` support with nesting
 - All Enforce Script modifiers: `override`, `proto`, `native`, `event`, `thread`, `sealed`, `abstract`, `final`, etc.
