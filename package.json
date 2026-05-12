@@ -1,0 +1,39 @@
+{
+  "name": "enforce-mcp-dayz",
+  "version": "1.0.0",
+  "description": "MCP Server for DayZ Enforce Script - semantic search and validation for vanilla scripts",
+  "main": "dist/server/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/server/index.js",
+    "index": "node dist/indexer/index-cli.js",
+    "test": "node --test dist/tests/**/*.test.js",
+    "index:world": "npm run index -- index P:/scripts --layer 4_World --clear",
+    "verify:index": "npm run index -- verify --min-classes 1000 --min-methods 1000 --min-embeddings 3000",
+    "search:rpc": "npm run index -- search \"rpc send to client\" --entity-type method",
+    "start:easy": "npm run build && npm run verify:index && npm run start",
+    "quickstart": "npm install && npm run build && npm run index:world && npm run verify:index"
+  },
+  "keywords": [
+    "mcp",
+    "dayz",
+    "enforce-script",
+    "modding"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "glob": "^10.3.10",
+    "zod": "^3.22.4",
+    "commander": "^11.1.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.40",
+    "typescript": "^5.3.3"
+  }
+}
